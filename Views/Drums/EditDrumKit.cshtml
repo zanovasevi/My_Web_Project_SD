@@ -1,0 +1,20 @@
+﻿@model AddDrumKitFormModel
+
+@{
+    ViewData["Title"] = "SD Edit Drum Kit";
+}
+
+<style>
+    .h4 {
+        margin-bottom: 40px;
+        margin-top: 40px;
+    }
+</style>
+
+<h4 class="h4 offset-2 col-xs-4">EDIT DRUM KIT</h4>
+
+<partial name="_DrumKitPartial" model="Model" />
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

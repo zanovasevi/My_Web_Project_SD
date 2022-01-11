@@ -1,0 +1,624 @@
+﻿@model AddDrumKitFormModel
+
+@{
+    var counterKick = 1;
+    var counterTom = 1;
+    var counterFloor = 1;
+    var a = "Kick";
+
+}
+
+<style>
+    .label {
+        margin-top: 8px;
+        font-weight: bold;
+    }
+
+    .inline {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .buttons {
+        margin-left: 16%;
+        margin-bottom: 3%;
+    }
+
+    .delete {
+        margin-left: 15px;
+    }
+    .borderStyle {
+        padding-left: 50px;
+        padding-top: 15px;
+    }
+</style>
+
+<div class="buttons">
+    <div class="inline"><button id="addKick" class="btn btn-primary">Add Kick</button></div>
+    <div class="inline"><button id="addTom" class="btn btn-primary">Add Tom</button></div>
+    <div class="inline"><button id="addFloor" class="btn btn-primary">Add Floor</button></div>
+</div>
+
+
+<form method="post" class="offset-2 col-xs-10" style="margin-right:50px">
+    <div class="form-group row">
+        <label asp-for="Brand" class="col-lg-2 label">BRAND</label>
+        <input asp-for="Brand" class="form-control col-lg-8" placeholder="brand">
+        <span asp-validation-for="Brand" class="offset-2 small text-danger"></span>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="Model" class="col-lg-2 label">MODEL</label>
+        <input asp-for="Model" class="form-control col-lg-8" placeholder="model">
+        <span asp-validation-for="Model" class="offset-2 small text-danger"></span>
+    </div>
+
+    <br />
+
+    <section id="kicks">
+        <section id="kick1">
+            @if (Model.Kick1 != null)
+            {
+                <div class="form-group row">
+                    <label asp-for="Kick(@counterKick)" class="col-lg-2 label">Kick @(counterKick)</label>
+                    <input asp-for="Kick(@counterKick)" class="form-control col-lg-8" placeholder="kick @(counterKick)">
+                    <button class="delete btn btn-outline-danger btn-sm">Delete</button>
+                    <span asp-validation-for="Kick(@counterKick)" class="offset-2 small text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="SNKick(@counterKick)" class="col-lg-2 label">SN Kick @(counterKick)</label>
+                    <input asp-for="SNKick(@counterKick)" class="form-control col-lg-8" placeholder="serial number kick @(counterKick)">
+                    <span asp-validation-for="SNKick(@counterKick)" class="offset-2 small text-danger"></span>
+                </div>
+
+            }
+        </section>
+
+        <section id="kick2">
+            @if (Model.Kick2 != null)
+            {
+                <div class="form-group row">
+                    <label asp-for="Kick(@counterKick)" class="col-lg-2 label">Kick @counterKick</label>
+                    <input asp-for="Kick(@counterKick)" class="form-control col-lg-8" placeholder="kick @counterKick">
+                    <button class="delete btn btn-outline-danger btn-sm">Delete</button>
+                    <span asp-validation-for="Kick(@counterKick)" class="offset-2 small text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="SNKick(@counterKick)" class="col-lg-2 label">SN Kick @counterKick</label>
+                    <input asp-for="SNKick(@counterKick)" class="form-control col-lg-8" placeholder="serial number kick @counterKick">
+                    <span asp-validation-for="SNKick(@counterKick++)" class="offset-2 small text-danger"></span>
+                </div>
+            }
+        </section>
+
+        <section id="kick3">
+            @if (Model.Kick3 != null)
+            {
+                <div class="form-group row">
+                    <label asp-for="Kick(@counterKick)" class="col-lg-2 label">Kick @counterKick</label>
+                    <input asp-for="Kick(@counterKick)" class="form-control col-lg-8" placeholder="kick @counterKick">
+                    <button class="delete btn btn-outline-danger btn-sm">Delete</button>
+                    <span asp-validation-for="Kick(@counterKick)" class="offset-2 small text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="SNKick(@counterKick)" class="col-lg-2 label">SN Kick @counterKick</label>
+                    <input asp-for="SNKick(@counterKick)" class="form-control col-lg-8" placeholder="serial number kick @counterKick">
+                    <span asp-validation-for="SNKick(@counterKick++)" class="offset-2 small text-danger"></span>
+                </div>
+            }
+        </section>
+
+        <section id="kick4">
+            @if (Model.Kick4 != null)
+            {
+                <div class="form-group row">
+                    <label asp-for="Kick(@counterKick)" class="col-lg-2 label">Kick @counterKick</label>
+                    <input asp-for="Kick(@counterKick)" class="form-control col-lg-8" placeholder="kick @counterKick">
+                    <button class="delete btn btn-outline-danger btn-sm">Delete</button>
+                    <span asp-validation-for="Kick(@counterKick)" class="offset-2 small text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="SNKick(@counterKick)" class="col-lg-2 label">SN Kick @counterKick</label>
+                    <input asp-for="SNKick(@counterKick)" class="form-control col-lg-8" placeholder="serial number kick @counterKick">
+                    <span asp-validation-for="SNKick(@counterKick++)" class="offset-2 small text-danger"></span>
+                </div>
+            }
+        </section>
+    </section>
+
+    <section id="toms">
+        <section id="tom1">
+            @if (Model.RackTom1 != null)
+            {
+                <div class="form-group row">
+                    <label asp-for="RackTom1" class="col-lg-2 label">Rack Tom @(counterTom)</label>
+                    <input asp-for="RackTom1" class="form-control col-lg-8" placeholder="rack tom 1">
+                    <button class="delete btn btn-outline-danger btn-sm">Delete</button>
+                    <span asp-validation-for="RackTom1" class="offset-2 small text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="SNRackTom1" class="col-lg-2 label">SN Tom @(counterTom++)</label>
+                    <input asp-for="SNRackTom1" class="form-control col-lg-8" placeholder="serial number rack tom 1">
+                    <span asp-validation-for="SNRackTom1" class="offset-2 small text-danger"></span>
+                </div>
+            }
+        </section>
+
+        <section id="tom2">
+            @if (Model.RackTom2 != null)
+            {
+                <div class="form-group row">
+                    <label asp-for="RackTom2" class="col-lg-2 label">Rack Tom @(counterTom)</label>
+                    <input asp-for="RackTom2" class="form-control col-lg-8" placeholder="rack tom 2">
+                    <button class="delete btn btn-outline-danger btn-sm">Delete</button>
+                    <span asp-validation-for="RackTom2" class="offset-2 small text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="SNRackTom2" class="col-lg-2 label">SN Tom @(counterTom++)</label>
+                    <input asp-for="SNRackTom2" class="form-control col-lg-8" placeholder="serial number rack tom 2">
+                    <span asp-validation-for="SNRackTom2" class="offset-2 small text-danger"></span>
+                </div>
+            }
+        </section>
+
+        <section id="tom3">
+            @if (Model.RackTom3 != null)
+            {
+                <div class="form-group row">
+                    <label asp-for="RackTom3" class="col-lg-2 label">Rack Tom @(counterTom)</label>
+                    <input asp-for="RackTom3" class="form-control col-lg-8" placeholder="rack tom 3">
+                    <button class="delete btn btn-outline-danger btn-sm">Delete</button>
+                    <span asp-validation-for="RackTom3" class="offset-2 small text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="SNRackTom3" class="col-lg-2 label">SN Tom @(counterTom++)</label>
+                    <input asp-for="SNRackTom3" class="form-control col-lg-8" placeholder="serial number rack tom 3">
+                    <span asp-validation-for="SNRackTom3" class="offset-2 small text-danger"></span>
+                </div>
+            }
+        </section>
+
+        <section id="tom4">
+            @if (Model.RackTom4 != null)
+            {
+                <div class="form-group row">
+                    <label asp-for="RackTom4" class="col-lg-2 label">Rack Tom @(counterTom)</label>
+                    <input asp-for="RackTom4" class="form-control col-lg-8" placeholder="rack tom 4">
+                    <button class="delete btn btn-outline-danger btn-sm">Delete</button>
+                    <span asp-validation-for="RackTom4" class="offset-2 small text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="SNRackTom4" class="col-lg-2 label">SN Tom @(counterTom++)</label>
+                    <input asp-for="SNRackTom4" class="form-control col-lg-8" placeholder="serial number rack tom 4">
+                    <span asp-validation-for="SNRackTom4" class="offset-2 small text-danger"></span>
+                </div>
+            }
+        </section>
+    </section>
+
+    <section id="floors">
+        <section id="floor1">
+            @if (Model.FloorTom1 != null)
+            {
+                <div class="form-group row">
+                    <label asp-for="FloorTom1" class="col-lg-2 label">Floor Tom @(counterFloor)</label>
+                    <input asp-for="FloorTom1" class="form-control col-lg-8" placeholder="floor tom 1">
+                    <button class="delete btn btn-outline-danger btn-sm">Delete</button>
+                    <span asp-validation-for="FloorTom1" class="offset-2 small text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="SNFloorTom1" class="col-lg-2 label">SN Floor @(counterFloor++)</label>
+                    <input asp-for="SNFloorTom1" class="form-control col-lg-8" placeholder="serial number floor tom 1">
+                    <span asp-validation-for="SNFloorTom1" class="offset-2 small text-danger"></span>
+                </div>
+            }
+        </section>
+
+        <section id="floor2">
+            @if (Model.FloorTom2 != null)
+            {
+                <div class="form-group row">
+                    <label asp-for="FloorTom2" class="col-lg-2 label">Floor Tom @(counterFloor)</label>
+                    <input asp-for="FloorTom2" class="form-control col-lg-8" placeholder="floor tom 2">
+                    <button class="delete btn btn-outline-danger btn-sm">Delete</button>
+                    <span asp-validation-for="FloorTom2" class="offset-2 small text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="SNFloorTom2" class="col-lg-2 label">SN Floor @(counterFloor++)</label>
+                    <input asp-for="SNFloorTom2" class="form-control col-lg-8" placeholder="serial number floor tom 2">
+                    <span asp-validation-for="SNFloorTom2" class="offset-2 small text-danger"></span>
+                </div>
+            }
+        </section>
+
+        <section id="floor3">
+            @if (Model.FloorTom3 != null)
+            {
+                <div class="form-group row">
+                    <label asp-for="FloorTom3" class="col-lg-2 label">Floor Tom @(counterFloor)</label>
+                    <input asp-for="FloorTom3" class="form-control col-lg-8" placeholder="floor tom 3">
+                    <button class="delete btn btn-outline-danger btn-sm">Delete</button>
+                    <span asp-validation-for="FloorTom3" class="offset-2 small text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="SNFloorTom3" class="col-lg-2 label">SN Floor @(counterFloor++)</label>
+                    <input asp-for="SNFloorTom3" class="form-control col-lg-8" placeholder="serial number floor tom 3">
+                    <span asp-validation-for="SNFloorTom3" class="offset-2 small text-danger"></span>
+                </div>
+            }
+        </section>
+
+        <section id="floor4">
+            @if (Model.FloorTom4 != null)
+            {
+                <div class="form-group row">
+                    <label asp-for="FloorTom4" class="col-lg-2 label">Floor Tom @(counterFloor)</label>
+                    <input asp-for="FloorTom4" class="form-control col-lg-8" placeholder="floor tom 4">
+                    <button class="delete btn btn-outline-danger btn-sm">Delete</button>
+                    <span asp-validation-for="FloorTom4" class="offset-2 small text-danger"></span>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="SNFloorTom4" class="col-lg-2 label">SN Floor @(counterFloor++)</label>
+                    <input asp-for="SNFloorTom4" class="form-control col-lg-8" placeholder="serial number floor tom 4">
+                    <span asp-validation-for="SNFloorTom4" class="offset-2 small text-danger"></span>
+                </div>
+            }
+        </section>
+    </section>
+
+    <br />
+    <div class="form-group row">
+        <label asp-for="Notes" class="col-lg-2 label">NOTES</label>
+        <textarea asp-for="Notes" type="text" rows="5" cols="100" class="form-control col-lg-8" placeholder="notes"></textarea>
+        <span asp-validation-for="Notes" class="offset-2 small text-danger"></span>
+    </div>
+    <div class="form-group row">
+        <label asp-for="UnitPrice" class="col-lg-2 label">PRICE</label>
+        <input asp-for="UnitPrice" class="form-control col-lg-2" placeholder="0.00">
+    </div>
+    <span asp-validation-for="UnitPrice" class="offset-2 small text-danger"></span>
+    <br />
+
+
+    <button id="buttonSubmit" type="submit" class="btn btn-primary offset-9">SAVE</button>
+</form>
+
+<script type="text/javascript">
+   
+    let btnKick = document.getElementById('addKick');
+    let btnTom = document.getElementById('addTom');
+    let btnFloor = document.getElementById('addFloor');
+    let btnSubmit = document.getElementById('buttonSubmit');
+
+    let numKickInputs = getNumberOfInputFields('kicks');
+    let numTomInputs = getNumberOfInputFields('toms');
+    let numFloorInputs = getNumberOfInputFields('floors');
+
+    let counterKicks = numKickInputs;
+    let counterToms = numTomInputs;
+    let counterFloors = numFloorInputs;
+
+    let sectionKicks = document.getElementById('kicks');
+    let sectionToms = document.getElementById('toms');
+    let sectionFloors = document.getElementById('floors');
+
+    let btnsDelete = document.querySelectorAll('.delete');
+
+    for (let i = 0; i < btnsDelete.length; i++) {
+        btnsDelete[i].addEventListener('click', deleteRow);
+    }
+
+    function deleteRow(ev) {
+        ev.preventDefault();
+
+        let section = ev.target.parentNode.parentNode;
+        let parentSection = section.parentNode;
+
+        parentSection.removeChild(section);
+    }
+
+
+    let currentKickNextNumber = 0;
+    let currentTomNextNumber = 0;
+    let currentFloorNextNumber = 0;
+
+    btnKick.addEventListener('click', () => {
+        if (counterKicks == 4) {
+            return;
+        }
+        if (counterKicks == 3) {
+            btnKick.setAttribute('disabled', 'true');
+        }
+        counterKicks++;
+
+        let kickLabels = getInputFields('kicks');
+        let nextNumber = checkNextNumberLabel(kickLabels, counterKicks, currentKickNextNumber);
+        currentKickNextNumber = nextNumber;
+
+        let div = document.createElement('div');
+        div.setAttribute('class', 'form-group row');
+        sectionKicks.appendChild(div);
+
+        let label = document.createElement('label');
+        label.setAttribute('asp-for', `Kick${counterKicks}`);
+        label.setAttribute('class', 'col-lg-2 label');
+        label.textContent = `Kick ${counterKicks}`;
+        div.appendChild(label);
+
+        let input = document.createElement('input');
+        input.setAttribute('id', 'kickInput');
+        input.setAttribute('name', `Kick${counterKicks}`);
+        input.setAttribute('class', 'form-control col-lg-8');
+        input.setAttribute('placeholder', `kick${counterKicks}`);
+        div.appendChild(input);
+
+        let btnDelete = document.createElement('button');
+        btnDelete.setAttribute('class', 'delete btn btn-outline-danger btn-sm');
+        btnDelete.textContent = 'Delete';
+        div.appendChild(btnDelete);
+
+        let span = document.createElement('span');
+        span.setAttribute('asp-validation-for', `Kick${counterKicks}`);
+        span.setAttribute('class', 'offset-2 small text-danger');
+        div.appendChild(span);
+
+        // Serial Number
+
+        let divSN = document.createElement('div');
+        divSN.setAttribute('class', 'form-group row');
+        sectionKicks.appendChild(divSN);
+
+        let labelSN = document.createElement('label');
+        labelSN.setAttribute('asp-for', `SNKick${counterKicks}`);
+        labelSN.setAttribute('class', 'col-lg-2 label');
+        labelSN.textContent = `SN Kick ${counterKicks}`;
+        divSN.appendChild(labelSN);
+
+        let inputSN = document.createElement('input');
+        inputSN.setAttribute('id', 'snKickInput');
+        inputSN.setAttribute('name', `SNKick${counterKicks}`);
+        inputSN.setAttribute('class', 'form-control col-lg-8');
+        inputSN.setAttribute('placeholder', `serial number kick ${counterKicks}`);
+        divSN.appendChild(inputSN);
+
+        let spanSN = document.createElement('span');
+        spanSN.setAttribute('asp-validation-for', `SNKick${counterKicks}`);
+        spanSN.setAttribute('class', 'offset-2 small text-danger');
+        divSN.appendChild(spanSN);
+
+        btnDelete.addEventListener('click', () => {
+            sectionKicks.removeChild(div);
+            sectionKicks.removeChild(divSN);
+            counterKicks--;
+            if (counterKicks < 4) {
+                btnKick.removeAttribute('disabled');
+            }
+        });
+
+    });
+
+    btnTom.addEventListener('click', () => {
+        if (counterToms == 4) {
+            return;
+        }
+        if (counterToms == 3) {
+            btnTom.setAttribute('disabled', 'true');
+        }
+        counterToms++;
+
+        let tomLabels = getInputFields('toms');
+        let nextNumber = checkNextNumberLabel(tomLabels, counterToms, currentTomNextNumber);
+        currentTomNextNumber = nextNumber;
+
+        let div = document.createElement('div');
+        div.setAttribute('class', 'form-group row');
+        sectionToms.appendChild(div);
+
+        let label = document.createElement('label');
+        label.setAttribute('asp-for', `RackTom${counterToms}`);
+        label.setAttribute('class', 'col-lg-2 label');
+        label.textContent = `Rack Tom ${counterToms}`;
+        div.appendChild(label);
+
+        let input = document.createElement('input');
+        input.setAttribute('id', 'tomInput');
+        input.setAttribute('name', `RackTom${counterToms}`);
+        input.setAttribute('class', 'form-control col-lg-8');
+        input.setAttribute('placeholder', `rack tom ${counterToms}`);
+        div.appendChild(input);
+
+        let btnDelete = document.createElement('button');
+        btnDelete.setAttribute('class', 'delete btn btn-outline-danger btn-sm');
+        btnDelete.textContent = 'Delete';
+        div.appendChild(btnDelete);
+
+        let span = document.createElement('span');
+        span.setAttribute('asp-validation-for', `RackTom${counterToms}`);
+        span.setAttribute('class', 'offset-2 small text-danger');
+        div.appendChild(span);
+
+        // Serial Number
+
+        let divSN = document.createElement('div');
+        divSN.setAttribute('class', 'form-group row');
+        sectionToms.appendChild(divSN);
+
+        let labelSN = document.createElement('label');
+        labelSN.setAttribute('asp-for', `SNRackTom${counterToms}`);
+        labelSN.setAttribute('class', 'col-lg-2 label');
+        labelSN.textContent = `SN Tom ${counterToms}`;
+        divSN.appendChild(labelSN);
+
+        let inputSN = document.createElement('input');
+        inputSN.setAttribute('id', 'snTomInput');
+        inputSN.setAttribute('name', `SNRackTom${counterToms}`);
+        inputSN.setAttribute('class', 'form-control col-lg-8');
+        inputSN.setAttribute('placeholder', `serial number rack tom ${counterToms}`);
+        divSN.appendChild(inputSN);
+
+        let spanSN = document.createElement('span');
+        spanSN.setAttribute('asp-validation-for', `SNRackTom${counterToms}`);
+        spanSN.setAttribute('class', 'offset-2 small text-danger');
+        divSN.appendChild(spanSN);
+
+        btnDelete.addEventListener('click', () => {
+            sectionToms.removeChild(div);
+            sectionToms.removeChild(divSN);
+            counterToms--;
+            if (counterToms < 4) {
+                btnTom.removeAttribute('disabled');
+            }
+        });
+    });
+
+    btnFloor.addEventListener('click', () => {
+        if (counterFloors == 4) {
+            return;
+        }
+        if (counterFloors == 3) {
+            btnFloor.setAttribute('disabled', 'true');
+        }
+        counterFloors++;
+
+        let floorLabels = getInputFields('floors');
+        let nextNumber = checkNextNumberLabel(floorLabels, counterFloors, currentFloorNextNumber);
+        currentFloorNextNumber = nextNumber;
+
+        let div = document.createElement('div');
+        div.setAttribute('class', 'form-group row');
+        sectionFloors.appendChild(div);
+
+        let label = document.createElement('label');
+        label.setAttribute('asp-for', `FloorTom${counterFloors}`);
+        label.setAttribute('class', 'col-lg-2 label');
+        label.textContent = `Floor Tom ${counterFloors}`;
+        div.appendChild(label);
+
+        let input = document.createElement('input');
+        input.setAttribute('id', 'floorInput');
+        input.setAttribute('name', `FloorTom${counterFloors}`);
+        input.setAttribute('class', 'form-control col-lg-8');
+        input.setAttribute('placeholder', `floor tom ${counterFloors}`);
+        div.appendChild(input);
+
+        let btnDelete = document.createElement('button');
+        btnDelete.setAttribute('class', 'delete btn btn-outline-danger btn-sm');
+        btnDelete.textContent = 'Delete';
+        div.appendChild(btnDelete);
+
+        let span = document.createElement('span');
+        span.setAttribute('asp-validation-for', `FloorTom${counterFloors}`);
+        span.setAttribute('class', 'offset-2 small text-danger');
+        div.appendChild(span);
+
+        // Serial Number
+
+        let divSN = document.createElement('div');
+        divSN.setAttribute('class', 'form-group row');
+        sectionFloors.appendChild(divSN);
+
+        let labelSN = document.createElement('label');
+        labelSN.setAttribute('asp-for', `SNFloorTom${counterFloors}`);
+        labelSN.setAttribute('class', 'col-lg-2 label');
+        labelSN.textContent = `SN Floor ${counterFloors}`;
+        divSN.appendChild(labelSN);
+
+        let inputSN = document.createElement('input');
+        inputSN.setAttribute('id', 'snFloorInput');
+        inputSN.setAttribute('name', `SNFloorTom${counterFloors}`);
+        inputSN.setAttribute('class', 'form-control col-lg-8');
+        inputSN.setAttribute('placeholder', `serial number floor tom ${counterFloors}`);
+        divSN.appendChild(inputSN);
+
+        let spanSN = document.createElement('span');
+        spanSN.setAttribute('asp-validation-for', `SNFloorTom${counterFloors}`);
+        spanSN.setAttribute('class', 'offset-2 small text-danger');
+        divSN.appendChild(spanSN);
+
+        btnDelete.addEventListener('click', () => {
+            sectionFloors.removeChild(div);
+            sectionFloors.removeChild(divSN);
+            counterFloors--;
+            if (counterFloors < 4) {
+                btnFloor.removeAttribute('disabled');
+            }
+        });
+    });
+
+    function getNumberOfInputFields(id) {
+        let num = document.querySelectorAll(`#${id} section input`).length;
+        return num / 2;
+    }
+
+    function getInputFields(id) {
+        let inputs = document.querySelectorAll(`#${id} label`);
+        return inputs;
+    }
+
+    function checkNextNumberLabel(labels, counter, currentNextNumber) {
+        let arr = [];
+
+        if (counter == 1) {
+            currentNextNumber = 1;
+            return currentNextNumber;
+        }
+
+        if (currentNextNumber != 0) {
+            currentNextNumber += 1;
+            return currentNextNumber;
+        }
+
+
+        for (let i = 0; i < labels.length; i += 2) {
+            let label = labels[i].textContent;
+
+            if (label != undefined) {
+                arr.push(label);
+            }
+        }
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].includes('Floor Tom 1')) {
+                arr[i] = 1;
+            } else if (arr[i].includes('Floor Tom 2')) {
+                arr[i] = 2;
+            } else if (arr[i].includes('Floor Tom 3')) {
+                arr[i] = 3;
+            } else if (arr[i].includes('Floor Tom 4')) {
+                arr[i] = 4;
+            }
+        }
+
+        let min = Math.min(...arr);
+        let result = min + 1;
+        return result;
+    }
+
+    window.onload = function () {
+        let el1 = document.getElementById('kicks');
+        let el2 = document.getElementById('toms');
+        let el3 = document.getElementById('floors');
+
+        let subEl1 = document.querySelectorAll('#kicks input').length;
+        let subEl2 = document.querySelectorAll('#toms input').length;
+        let subEl3 = document.querySelectorAll('#floors input').length;
+
+        if (subEl1 != 0) {
+            el1.style.border = '13px groove DodgerBlue';
+            el1.setAttribute('class', 'borderStyle');
+        }
+
+        if (subEl2 != 0) {
+            el2.style.border = '13px groove DodgerBlue';
+            el2.setAttribute('class', 'borderStyle');
+        }
+
+        if (subEl3 != 0) {
+            el3.style.border = '13px groove DodgerBlue';
+            el3.setAttribute('class', 'borderStyle');
+        }
+    }
+        
+
+    
+</script>

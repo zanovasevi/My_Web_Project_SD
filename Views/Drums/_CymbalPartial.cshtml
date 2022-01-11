@@ -1,0 +1,54 @@
+﻿@model CymbalViewModel
+
+<style>
+    .label {
+        margin-top: 8px;
+        font-weight: bold;
+    }
+</style>
+
+<form method="post" class="offset-2 col-xs-10" style="margin-right:50px">
+    <div class="form-group row">
+        <label asp-for="Brand" class="col-lg-2 label">BRAND</label>
+        <input asp-for="Brand" class="form-control col-lg-8" placeholder="brand">
+        <span asp-validation-for="Brand" class="offset-2 small text-danger"></span>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Model" class="col-lg-2 label">MODEL</label>
+        <input asp-for="Model" class="form-control col-lg-8" placeholder="model">
+        <span asp-validation-for="Model" class="offset-2 small text-danger"></span>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Kind" class="col-lg-2 label">KIND</label>
+        <input asp-for="Kind" class="form-control col-lg-8" placeholder="kind">
+        <span asp-validation-for="Kind" class="offset-2 small text-danger"></span>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Size" class="col-lg-2 label">SIZE</label>
+        <input asp-for="Size" class="form-control col-lg-8" placeholder="size">
+        <span asp-validation-for="Size" class="offset-2 small text-danger"></span>
+    </div>
+    <div class="form-group row">
+        <label asp-for="SerialNumber" class="col-lg-2 label">SN</label>
+        <input asp-for="SerialNumber" class="form-control col-lg-8" placeholder="serial number">
+        <span asp-validation-for="SerialNumber" class="offset-2 small text-danger"></span>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Notes" class="col-lg-2 label">NOTES</label>
+        <textarea asp-for="Notes" type="text" rows="5" cols="100" class="form-control col-lg-8" placeholder="notes"></textarea>
+        <span asp-validation-for="Notes" class="offset-2 small text-danger"></span>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Count" class="col-lg-2 label">COUNT</label>
+        <input asp-for="Count" class="form-control col-lg-8" placeholder="count">
+        <span asp-validation-for="Count" class="offset-2 small text-danger"></span>
+    </div>
+    <div class="form-group row">
+        <label asp-for="UnitPrice" class="col-lg-2 label">PRICE</label>
+        <input asp-for="UnitPrice" class="form-control col-lg-2" placeholder="0.00">
+    </div>
+        <span asp-validation-for="UnitPrice" class="offset-2 small text-danger"></span>
+    <br />
+
+    <button type="submit" class="btn btn-primary offset-9">SAVE</button>
+</form>

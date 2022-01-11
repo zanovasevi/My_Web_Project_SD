@@ -1,0 +1,22 @@
+﻿@model DeleteViewModel
+
+@{
+    ViewData["Title"] = "SD Delete Confirmation";
+}
+
+<div tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete Confirmation</h5>
+            </div>
+            <div class="modal-body">
+                Are you sure that you want to delete @Model.Brand @Model.Model ?
+            </div>
+            <div class="modal-footer">
+                <a asp-action="@Model.Category" class="btn btn-secondary" data-dismiss="modal">Cancel</a>
+                <a asp-action="Delete" asp-route-id="@Model.Id" asp-route-categoryId="@Model.CategoryId" class="btn btn-primary">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>

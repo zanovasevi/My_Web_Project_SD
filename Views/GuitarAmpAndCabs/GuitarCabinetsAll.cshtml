@@ -1,0 +1,152 @@
+﻿@using static SoundAndDance_v2.Constants
+@using static SoundAndDance_v2.Data.DataConstants
+@model GuitarTotalModel
+
+@{
+    var dict = Model.dictGuitarCabinetViewModel;
+    var allIds = Model.allIds;
+}
+
+@{
+    ViewData["Title"] = "SD Guitar Cabinets";
+
+    var isAdmin = User.IsInRole(AdministratorRoleName);
+
+    var counter = 1;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <style>
+        table {
+            width: 100%;
+        }
+
+        tr.border_header {
+            border: solid;
+            background-color: royalblue;
+        }
+
+        .tdStyle {
+            font-weight: bold;
+            border-top: double;
+            border-bottom: double;
+            border-bottom-color: royalblue;
+            border-top-color: royalblue;
+        }
+
+        tr.border_bottom td {
+            border-bottom: 1px solid black;
+        }
+
+        th.first_col {
+            width: 15%;
+        }
+
+        .btn-add {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h4 class="margin-h4">
+        GUITAR CABINETS
+        @if (isAdmin)
+        {
+            <a asp-controller="GuitarAmpAndCabs" asp-action="AddGuitarCabinet" asp-route-categoryId="@CategoryIdGuitarCabinets"
+               input type="button" class="btn btn-primary btn-add offset-10 col-xs-2" style="font-size: 1.1vw;">ADD NEW GUITAR CABINET</a>
+        }
+    </h4>
+
+
+    @if (!dict.Any())
+    {
+        <div class="alert alert-primary" role="alert">
+            There are no Guitar Cabinets in the system!
+        </div>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr class="border_header">
+                    <th class="first_col" scope="col">#</th>
+                    <th scope="col">MODEL</th>
+                    <th scope="col" class="text-center">SERIAL NUMBER</th>
+                    <th scope="col" class="text-center">NOTES</th>
+                    <th scope="col" class="text-center">COUNT</th>
+                    @if (isAdmin)
+                    {
+                        <th scope="col" class="text-center">UNIT PRICE</th>
+                        <th scope="col" class="text-center">TOTAL PRICE</th>
+                    }
+                    else
+                    {
+                        <th></th>
+                        <th></th>
+                    }
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var guitarCab in dict.OrderBy(c => c.Key))
+                {
+                    <tr class="tdStyle" style="background-color:lightcyan">
+                        <th scope="row">@(counter++). @guitarCab.Key.ToUpper()</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    @foreach (var item in guitarCab.Value.OrderBy(i => i.Brand).ThenBy(i => i.Model))
+                    {
+                        <tr>
+                            <td>@item.Brand</td>
+                            <td>@item.Model</td>
+                            <td class="text-center">@item.SerialNumber</td>
+                            <td>@item.Notes</td>
+                            <td class="text-center">@item.Count</td>
+                            @if (isAdmin)
+                            {
+                                <td class="text-center">@item.UnitPrice</td>
+                                <td class="text-center">@(item.Count * item.UnitPrice)</td>
+                                <td class="text-right" style="padding:0px; padding-bottom:10px">
+                                    <a asp-action="EditGuitarCabinet" asp-route-id="@item.Id" asp-route-categoryId="@CategoryIdGuitarCabinets" class="btn btn-primary" style="margin-right:5px; font-size: 1.1vw;">Edit</a>
+                                </td>
+                                <td class="text-right" style="padding:0px; padding-bottom:10px">
+                                    <a asp-action="_DeleteConfirmationPartial" asp-route-id="@item.Id" asp-route-categoryId="@CategoryIdGuitarCabinets" class="btn btn-primary" style="margin-right:9px; font-size: 1.1vw;">Delete</a>
+                                </td>
+                            }
+                            else
+                            {
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            }
+                        </tr>
+                    }
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</body>
+</html>

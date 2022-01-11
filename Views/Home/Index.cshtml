@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "SD Home Page";
+}
+
+<style>
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h4 {
+        color: black;
+        font-family: Courier;
+    }
+</style>
+
+<div class="text-center">
+
+    <h4 class="display-4">Welcome</h4>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <h4 style="font:bold">@User.Identity.Name.Substring(0, User.Identity.Name.IndexOf("@"))</h4>
+    }
+</div>
+<br />
+<img src="/images/logo.jpg" alt="logo" style="width: 60%;" />

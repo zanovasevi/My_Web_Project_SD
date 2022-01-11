@@ -1,0 +1,43 @@
+﻿<Properties StartupConfiguration="{6A363456-8C99-4664-8BA6-259AB5585F84}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Drums/_DrumKitPartial.cshtml">
+    <Files>
+      <File FileName="Views/Drums/AddDrumKit.cshtml" Line="17" Column="1" />
+      <File FileName="Views/Drums/_DrumKitPart.cshtml" />
+      <File FileName="Views/Drums/_DrumKitPartial.cshtml" Line="74" Column="14" />
+      <File FileName="Views/Drums/AcousticDrumKitsAll.cshtml" />
+      <File FileName="Views/Drums/EditDrumKit.cshtml" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SoundAndDance_v2" expanded="True">
+            <Node name="SoundAndDance_v2" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Infrastructure" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Drums" expanded="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Drums" expanded="True">
+                  <Node name="_DrumKitPartial.cshtml" selected="True" />
+                </Node>
+              </Node>
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.SoundAndDance__v2 PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Debugger.DebugSourceFolders>
+    <String>/Users/macbookpro/Documents/Projects/Proba/SoundAndDance_v2/Views</String>
+  </Debugger.DebugSourceFolders>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

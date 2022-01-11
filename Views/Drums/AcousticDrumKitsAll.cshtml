@@ -1,0 +1,240 @@
+﻿@using static SoundAndDance_v2.Constants
+@using static SoundAndDance_v2.Data.DataConstants
+@model IEnumerable<AcousticDrumKitViewModel>
+
+@{
+    ViewData["Title"] = "SD Acoustic Drum Kits";
+
+    var isAdmin = User.IsInRole(AdministratorRoleName);
+
+    var counter = 1;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <style>
+        table {
+            width: 100%;
+            table-layout: fixed;
+            
+        }
+
+        tr.border_header {
+            border: solid;
+            background-color: royalblue;
+        }
+
+        .tdStyle {
+            font-weight: bold;
+            border-top: double;
+            border-bottom: double;
+            border-bottom-color: royalblue;
+            border-top-color: royalblue;
+        }
+
+        tr.border_bottom td {
+            border-bottom: 1px solid black;
+        }
+
+        th.first_col {
+            width: 15%;
+        }
+
+        .btn-add {
+            margin-bottom: 15px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <h4 class="margin-h4">
+        ACOUSTIC DRUM KITS
+    </h4>
+    @if (isAdmin)
+    {
+        <a asp-controller="Drums" asp-action="AddDrumKit" asp-route-categoryId="@CategoryIdDrumKits"
+           input type="button" class="btn btn-primary btn-add">ADD NEW DRUM KIT</a>
+    }
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-primary" role="alert">
+            There are no Acoustic Drum Kits in the system!
+        </div>
+    }
+    else
+    {
+        <table class="table table-bordered table-hover table-responsive-sm">
+            <thead>
+                <tr class="border_header">
+                    <th scope="col">#</th>
+                    <th scope="col">MODEL SET</th>
+                    <th scope="col" class="text-center">SERIAL NUMBER</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var drum in Model.OrderBy(x => x.Brand))
+                {
+                    var counterKick = 1;
+                    var counterTom = 1;
+                    var counterFloor = 1;
+
+                    <tr class="tdStyle" style="background-color:lightcyan">
+                        <th scope="row">@(counter++).</th>
+                        <td>@drum.Brand.ToUpper() @drum.Model</td>
+                        <td></td>
+                        <td></td>
+                        <td class="text-right" style="padding:0px; padding-bottom:10px">
+                            @if (isAdmin)
+                            {
+                                <a asp-action="EditDrumKit" asp-route-id="@drum.Id" class="btn btn-primary btn-sm" style="margin-right:5px;">Edit</a>
+                                <a asp-action="_DeleteConfirmationPartial" asp-route-id="@drum.Id" asp-route-categoryId="@drum.CategoryId" class="btn btn-primary btn-sm" style="margin-right:9px;">Delete</a>
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        @if (drum.Kick1 != null)
+                        {
+                            <td>Kick @(counterKick++)</td>
+                            <td>@drum.Kick1</td>
+                            <td class="text-center">@drum.SNKick1</td>
+                            <td></td>
+                            <td></td>
+                        }
+                    </tr>
+                    <tr>
+                        @if (drum.Kick2 != null)
+                        {
+                            <td>Kick @(counterKick++)</td>
+                            <td>@drum.Kick2</td>
+                            <td class="text-center">@drum.SNKick2</td>
+                            <td></td>
+                            <td></td>
+                        }
+                    </tr>
+                    <tr>
+                        @if (drum.Kick3 != null)
+                        {
+                            <td>Kick @(counterKick++)</td>
+                            <td>@drum.Kick3</td>
+                            <td class="text-center">@drum.SNKick3</td>
+                            <td></td>
+                            <td></td>
+                        }
+                    </tr>
+                    <tr>
+                        @if (drum.Kick4 != null)
+                        {
+                            <td>Kick @(counterKick++)</td>
+                            <td>@drum.Kick4</td>
+                            <td class="text-center">@drum.SNKick4</td>
+                            <td></td>
+                            <td></td>
+                        }
+                    </tr>
+                    <tr>
+                        @if (drum.RackTom1 != null)
+                        {
+                            <td>Rack Tom @(counterTom++)</td>
+                            <td>@drum.RackTom1</td>
+                            <td class="text-center">@drum.SNRackTom1</td>
+                            <td></td>
+                            <td></td>
+                        }
+                    </tr>
+                    <tr>
+                        @if (drum.RackTom2 != null)
+                        {
+                            <td>Rack Tom @(counterTom++)</td>
+                            <td>@drum.RackTom2</td>
+                            <td class="text-center">@drum.SNRackTom2</td>
+                            <td></td>
+                            <td></td>
+                        }
+                    </tr>
+                    <tr>
+                        @if (drum.RackTom3 != null)
+                        {
+                            <td>Rack Tom @(counterTom++)</td>
+                            <td>@drum.RackTom3</td>
+                            <td class="text-center">@drum.SNRackTom3</td>
+                            <td></td>
+                            <td></td>
+                        }
+                    </tr>
+                    <tr>
+                        @if (drum.RackTom4 != null)
+                        {
+                            <td>Rack Tom @(counterTom++)</td>
+                            <td>@drum.RackTom4</td>
+                            <td class="text-center">@drum.SNRackTom4</td>
+                            <td></td>
+                            <td></td>
+                        }
+                    </tr>
+                    <tr>
+                        @if (drum.FloorTom1 != null)
+                        {
+                            <td>Floor Tom @(counterFloor++)</td>
+                            <td>@drum.FloorTom1</td>
+                            <td class="text-center">@drum.SNFloorTom1</td>
+                            <td></td>
+                            <td></td>
+                        }
+                    </tr>
+                    <tr>
+                        @if (drum.FloorTom2 != null)
+                        {
+                            <td>Floor Tom @(counterFloor++)</td>
+                            <td>@drum.FloorTom2</td>
+                            <td class="text-center">@drum.SNFloorTom2</td>
+                            <td></td>
+                            <td></td>
+                        }
+                    </tr>
+                    <tr>
+                        @if (drum.FloorTom3 != null)
+                        {
+                            <td>Floor Tom @(counterFloor++)</td>
+                            <td>@drum.FloorTom3</td>
+                            <td class="text-center">@drum.SNFloorTom3</td>
+                            <td></td>
+                            <td></td>
+                        }
+                    </tr>
+                    <tr class="border_bottom">
+                        @if (drum.FloorTom4 != null)
+                        {
+                            <td>Floor Tom @(counterFloor++)</td>
+                            <td>@drum.FloorTom4</td>
+                            <td class="text-center">@drum.SNFloorTom4</td>
+                            <td></td>
+                            <td></td>
+                        }
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style="font-weight:initial">NOTES:  @drum.Notes</td>
+                        <td></td>
+                        @if (isAdmin)
+                        {
+                            <td>UNIT PRICE: @drum.UnitPrice</td>
+                            <td style="font-weight:bold">TOTAL: @drum.UnitPrice</td>
+                        }
+                        else
+                        {
+                            <td></td>
+                            <td></td>
+                        }
+                    </tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                }
+            </tbody>
+        </table>
+    }
+</body>
+</html>

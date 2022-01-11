@@ -1,0 +1,77 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>aspnet-SoundAndDance_v2-3019FC1A-28C4-465E-88FE-699F1DD11792</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" />
+    <None Remove="Services\" />
+    <None Remove="Services\Drums\" />
+    <None Remove="Services\CategoryServices\" />
+    <None Remove="Services\BassServices\" />
+    <None Remove="Models\Bass\" />
+    <None Remove="Services\GuitarServices\" />
+    <None Remove="Models\Guitar\" />
+    <None Remove="Services\KeyboardServices\" />
+    <None Remove="Models\Keyboard\" />
+    <None Remove="Models\GuitarAndBassInstrument\" />
+    <None Remove="Services\InstrumentService\" />
+    <None Remove="Services\ServiceModels\" />
+    <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
+    <None Remove="Views\Admin\" />
+    <None Remove="Infrastructure\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.7"><IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+<PrivateAssets>all</PrivateAssets>
+</PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.7">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="Data\Models\" />
+    <Folder Include="Views\Bass\" />
+    <Folder Include="Views\Drums\" />
+    <Folder Include="Views\GuitarAmpAndCabs\" />
+    <Folder Include="Views\GuitarAndBassInstruments\" />
+    <Folder Include="Views\Keyboard\" />
+    <Folder Include="Models\Drums\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\DrumsServices\" />
+    <Folder Include="Services\CategoryServices\" />
+    <Folder Include="Services\BassServices\" />
+    <Folder Include="Models\Bass\" />
+    <Folder Include="Services\GuitarServices\" />
+    <Folder Include="Models\Guitar\" />
+    <Folder Include="Services\KeyboardServices\" />
+    <Folder Include="Models\Keyboard\" />
+    <Folder Include="Models\GuitarAndBassInstrument\" />
+    <Folder Include="Services\InstrumentServices\" />
+    <Folder Include="Services\ServiceModels\" />
+    <Folder Include="Infrastructure\" />
+  </ItemGroup>
+</Project>

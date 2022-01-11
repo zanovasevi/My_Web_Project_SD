@@ -1,0 +1,97 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using static SoundAndDance_v2.Constants
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<style>
+    #mail {
+        margin-top: 0px;
+    }
+
+    #a_menu {
+        border-width: 1px;
+        border-top-style: groove;
+    }
+
+    .hide{
+        visibility: hidden;
+    }
+
+    li {
+        float: left;
+    }
+
+    a {
+        display: block;
+        margin-inline-end: 40px;
+    }
+</style>
+
+<div class="row">
+    <nav class="col-12">
+        <ul class=" nav navbar-nav">
+            @if (SignInManager.IsSignedIn(User) && User.IsInRole(AdministratorRoleName))
+            {
+                <li class="nav-item">
+                    <a id="a_menu" class="nav-link text-dark" asp-controller="Home" asp-action="Backline">BACKLINE</a>
+                </li>
+                <li class="nav-item">
+                    <a id="a_menu" class="nav-link text-dark hide" asp-controller="Home" asp-action="Backline">BUTTON2</a>
+                </li>
+                <li class="nav-item">
+                    <a id="a_menu" class="nav-link text-dark hide" asp-controller="Home" asp-action="Backline">BUTTON3</a>
+                </li>
+                <li class="nav-item">
+                    <a id="a_menu" class="nav-link text-dark hide" asp-controller="Home" asp-action="Backline">BUTTON4</a>
+                </li>
+                <li class="nav-item">
+                    <a id="a_menu" class="nav-link text-dark hide" asp-controller="Home" asp-action="Backline">BUTTON5</a>
+                </li>
+                <li class="nav-item">
+                    <a id="mail" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">User: @User.Identity.Name.Substring(0, User.Identity.Name.IndexOf("@"))</a>
+                </li>
+                <li class="nav-item ">
+                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                        <button type="submit" class="nav-link btn btn-link text-dark">LOGOUT</button>
+                    </form>
+                </li>
+
+            }
+            else if (SignInManager.IsSignedIn(User) && !User.IsInRole(AdministratorRoleName))
+            {
+                <li class="nav-item">
+                    <a id="a_menu" class="nav-link text-dark" asp-controller="Home" asp-action="Backline">BACKLINE</a>
+                </li>
+                <li class="nav-item">
+                    <a id="a_menu" class="nav-link text-dark hide" asp-controller="Home" asp-action="Backline">BUTTON2</a>
+                </li>
+                <li class="nav-item">
+                    <a id="a_menu" class="nav-link text-dark hide" asp-controller="Home" asp-action="Backline">BUTTON3</a>
+                </li>
+                <li class="nav-item">
+                    <a id="a_menu" class="nav-link text-dark hide" asp-controller="Home" asp-action="Backline">BUTTON4</a>
+                </li>
+                <li class="nav-item">
+                    <a id="a_menu" class="nav-link text-dark hide" asp-controller="Home" asp-action="Backline">BUTTON5</a>
+                </li>
+                <li class="nav-item userLogout">
+                    <a id="mail" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">User: @User.Identity.Name.Substring(0, User.Identity.Name.IndexOf("@"))</a>
+                </li>
+                <li class="nav-item logoutNav">
+                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                        <button type="submit" class="nav-link btn btn-link text-dark">LOGOUT</button>
+                    </form>
+                </li>
+            }
+            else
+            {
+                <li class="nav-item reglog">
+                    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">REGISTER</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">LOGIN</a>
+                </li>
+            }
+        </ul>
+    </nav>
+</div>
