@@ -1,17 +1,10 @@
 ﻿<Properties StartupConfiguration="{6A363456-8C99-4664-8BA6-259AB5585F84}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Drums/_DrumKitPartial.cshtml">
-    <Files>
-      <File FileName="Views/Drums/AddDrumKit.cshtml" Line="17" Column="1" />
-      <File FileName="Views/Drums/_DrumKitPart.cshtml" />
-      <File FileName="Views/Drums/_DrumKitPartial.cshtml" Line="74" Column="14" />
-      <File FileName="Views/Drums/AcousticDrumKitsAll.cshtml" />
-      <File FileName="Views/Drums/EditDrumKit.cshtml" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="SoundAndDance_v2" expanded="True">
-            <Node name="SoundAndDance_v2" selected="True" />
+            <Node name="SoundAndDance_v2" expanded="True" selected="True" />
           </Node>
         </State>
       </Pad>
