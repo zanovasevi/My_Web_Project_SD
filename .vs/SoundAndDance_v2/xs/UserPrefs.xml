@@ -11,20 +11,7 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="SoundAndDance_v2" expanded="True">
-            <Node name="SoundAndDance_v2" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Data" expanded="True" />
-              <Node name="Infrastructure" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="Drums" expanded="True" />
-              </Node>
-              <Node name="Views" expanded="True">
-                <Node name="Drums" expanded="True">
-                  <Node name="_DrumKitPartial.cshtml" selected="True" />
-                </Node>
-              </Node>
-              <Node name="appsettings.json" expanded="True" />
-            </Node>
+            <Node name="SoundAndDance_v2" selected="True" />
           </Node>
         </State>
       </Pad>
