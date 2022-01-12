@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Vc1xGptVTC0z+2ux9L/sXE1xuvDG0dDbhNHQBfwEAZKDo0R22xhh0FxXT1HQDxeAvjS3cQR2esALkSq6dEtawg==",
+  "dgSpecHash": "Kd+MtDr+YWuvNMDhcBrulLj03ftQjTAE460SKD3Sy5yxfl1Oi2OuRIDWAS15J10OXX0S/F63ZdY1JlOUL0jCzg==",
   "success": true,
-  "projectFilePath": "/Users/macbookpro/Desktop/My_Web_Project_SD-401ee1e72af93c6eae8ece93ba213a2ed234e018/SoundAndDance_v2.csproj",
+  "projectFilePath": "/Users/macbookpro/Desktop/My_Web_Project_SD/SoundAndDance_v2.csproj",
   "expectedPackageFiles": [
     "/Users/macbookpro/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/macbookpro/.nuget/packages/microsoft.aspnetcore.cryptography.internal/5.0.7/microsoft.aspnetcore.cryptography.internal.5.0.7.nupkg.sha512",

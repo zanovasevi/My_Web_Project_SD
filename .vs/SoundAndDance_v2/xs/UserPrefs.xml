@@ -1,11 +1,17 @@
 ﻿<Properties StartupConfiguration="{6A363456-8C99-4664-8BA6-259AB5585F84}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Data/SDDbContext.cs">
+    <Files>
+      <File FileName="Controllers/KeyboardController.cs" Line="1" Column="1" />
+      <File FileName="Data/SDDbContext.cs" Line="24" Column="27" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="SoundAndDance_v2" expanded="True">
-            <Node name="SoundAndDance_v2" expanded="True" selected="True">
-              <Node name="Controllers" expanded="True" />
+            <Node name="SoundAndDance_v2" expanded="True">
+              <Node name="Data" expanded="True">
+                <Node name="SDDbContext.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>

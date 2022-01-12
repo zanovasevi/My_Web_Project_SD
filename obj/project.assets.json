@@ -7840,11 +7840,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/macbookpro/Desktop/My_Web_Project_SD-401ee1e72af93c6eae8ece93ba213a2ed234e018/SoundAndDance_v2.csproj",
+      "projectUniqueName": "/Users/macbookpro/Desktop/My_Web_Project_SD/SoundAndDance_v2.csproj",
       "projectName": "SoundAndDance_v2",
-      "projectPath": "/Users/macbookpro/Desktop/My_Web_Project_SD-401ee1e72af93c6eae8ece93ba213a2ed234e018/SoundAndDance_v2.csproj",
+      "projectPath": "/Users/macbookpro/Desktop/My_Web_Project_SD/SoundAndDance_v2.csproj",
       "packagesPath": "/Users/macbookpro/.nuget/packages/",
-      "outputPath": "/Users/macbookpro/Desktop/My_Web_Project_SD-401ee1e72af93c6eae8ece93ba213a2ed234e018/obj/",
+      "outputPath": "/Users/macbookpro/Desktop/My_Web_Project_SD/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/macbookpro/.config/NuGet/NuGet.Config"
