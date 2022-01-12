@@ -4,10 +4,8 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="SoundAndDance_v2" expanded="True">
-            <Node name="SoundAndDance_v2" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="KeyboardController.cs" selected="True" />
-              </Node>
+            <Node name="SoundAndDance_v2" expanded="True" selected="True">
+              <Node name="Controllers" expanded="True" />
             </Node>
           </Node>
         </State>
