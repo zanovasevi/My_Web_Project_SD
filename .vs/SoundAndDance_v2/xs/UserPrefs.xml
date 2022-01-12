@@ -5,10 +5,7 @@
         <State name="__root__">
           <Node name="SoundAndDance_v2" expanded="True">
             <Node name="SoundAndDance_v2" expanded="True" selected="True">
-              <Node name="Views" expanded="True">
-                <Node name="Bass" expanded="True" />
-                <Node name="Home" expanded="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
             </Node>
           </Node>
         </State>
